@@ -1,5 +1,5 @@
 # Gauntlet Find
-[Golfish](https://github.com/sameoldlab/goldfish) (fuzzy file searcher) integration for [Gauntlet](https://github.com/project-gauntlet/gauntlet).
+[Goldfish](https://github.com/sameoldlab/goldfish) (fuzzy file searcher) integration for [Gauntlet](https://github.com/project-gauntlet/gauntlet).
 
 Supports: Linux (verified), MacOS (untested), Windows? (if `file` is installed?)
 
