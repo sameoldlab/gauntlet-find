@@ -1,21 +1,7 @@
-## Plugins
-### Windows
-Search open windows on wayland using wlrctl. Try the builtin window plugin before using this.
+# Gauntlet Find
+[Golfish](https://github.com/sameoldlab/goldfish) (fuzzy file searcher) integration for [Gauntlet](https://github.com/project-gauntlet/gauntlet).
 
-Status: Stable
-
-Supports: Linux
-
-Dependencies:
- - [wlrctl](https://git.sr.ht/~brocellous/wlrctl)
-
-
-### Find
-Fuzzy search files.
-
-Status: Beta
-
-Supports: Linux, MacOS
+Supports: Linux (verified), MacOS (untested), Windows? (if `file` is installed?)
 
 Dependencies:
  - [goldfish](https://github.com/sameoldlab/goldfish)
@@ -23,16 +9,3 @@ Dependencies:
  - xdg-open (linux)
  - explorer (windows)
  - open (macos/darwin)
-
-
-### Files
-Navigate files uses pop-launcher.
-
-Status: Unreleased
-
-Supports: Linux
-
-Dependencies:
- - pop-launcher
-
-Todo: Drop external dependency

@@ -1,15 +1,10 @@
 # schema = "https://raw.githubusercontent.com/project-gauntlet/gauntlet/refs/heads/main/docs/schema/plugin_manifest.schema.json"
 
 [gauntlet]
-name = 'same old plugins'
-description = "sameoldlab's Plugin Repo"
-
-[[entrypoint]]
-id = 'windows'
-name = 'Windows'
-path = 'src/windows.tsx'
-type = 'view'
-description = 'Wayland window tracking'
+name = 'Finder'
+description = """
+Find files on your computer with fuzzy search
+"""
 
 [[entrypoint]]
 id = 'find'
@@ -28,29 +23,24 @@ id = 'copyPath'
 description = 'Copy filepath'
 shortcut = { key = 'p', kind = 'alternative' }
 
-[[entrypoint]]
-id = 'files'
-name = 'Files'
-path = 'src/files.tsx'
-type = 'view'
-description = 'Navigate files'
-
 [permissions]
 clipboard = ["write"]
 
 [permissions.exec]
 command = [
-  "pop-launcher",
-  "wlrctl",
-  "file",
-  "xdg-open",
-  "explorer",
-  "open",
-  "gf",
+  "file", # get file details
+  "xdg-open", # open linux
+  "explorer", # open windows
+  "open", # open darwin
+  "gf", # fuzzy search files
 ]
 
 [permissions.filesystem]
-read = ["/"]
+read = [
+  "{linux:user-home}",
+  "{macos:user-home}",
+  "{windows:user-home}",
+]
 
 [[supported_system]]
 os = 'linux'
