@@ -1,0 +1,52 @@
+# schema = "https://raw.githubusercontent.com/project-gauntlet/gauntlet/refs/heads/main/docs/schema/plugin_manifest.schema.json"
+
+[gauntlet]
+name = 'Finder'
+description = """
+Find files on your computer with fuzzy search
+"""
+
+[[entrypoint]]
+id = 'find'
+name = 'Find'
+path = 'src/find.tsx'
+type = 'view'
+description = 'Search files'
+
+[[entrypoint.actions]]
+id = 'copyFile'
+description = 'Copy file content'
+shortcut = { key = 'y', kind = 'alternative' }
+
+[[entrypoint.actions]]
+id = 'copyPath'
+description = 'Copy filepath'
+shortcut = { key = 'p', kind = 'alternative' }
+
+[permissions]
+clipboard = ["write"]
+
+[permissions.exec]
+command = [
+  "file", # get file details
+  "xdg-open", # open linux
+  "explorer", # open windows
+  "open", # open darwin
+  "gf", # fuzzy search files
+]
+
+[permissions.filesystem]
+read = [
+  "{linux:user-home}",
+  "{macos:user-home}",
+  "{windows:user-home}",
+]
+
+[[supported_system]]
+os = 'linux'
+
+[[supported_system]]
+os = 'macos'
+
+[[supported_system]]
+os = 'windows'
